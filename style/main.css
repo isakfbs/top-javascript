@@ -82,6 +82,40 @@ form button:hover {
   background-color: #218838;
 }
 
+.card {
+  border: "1px solid #ccc";
+  border-radius: 8px;
+  padding: "1rem";
+  width: "150px";
+  text-align: "center";
+  box-shadow: "0 4px 8px rgba(0,0,0,0.1)";
+}
+
+.card-image {
+  width: 100%; /* Faz a imagem ocupar toda a largura do card */
+  height: auto; /* Mantém a proporção */
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.card-author {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.card-pages {
+  font-size: 12px;
+  color: #777;
+}
+
 /* Animation keyframes */
 @keyframes fadeIn {
   from {
