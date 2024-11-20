@@ -44,6 +44,7 @@ const book3 = new Book(
   "448",
   "https://m.media-amazon.com/images/I/41sMe18lj+L._SY445_SX342_.jpg"
 );
+book3.wasRead = true;
 const book4 = new Book(
   "The Return of the King",
   "J.R.R. Tolkien",

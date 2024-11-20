@@ -116,6 +116,15 @@ form button:hover {
   color: #777;
 }
 
+.card-read-status {
+  font-weight: bold;
+  color: #007bff; /* Default color for "Not Read" */
+}
+
+.card-read-status.read {
+  color: #28a745; /* Green for "Read" */
+}
+
 /* Animation keyframes */
 @keyframes fadeIn {
   from {
