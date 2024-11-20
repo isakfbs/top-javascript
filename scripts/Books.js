@@ -1,5 +1,8 @@
 //Constructor for making "Book" objects
 const container = document.getElementById("book-container");
+const newBookBtn = document.getElementById("new-book-btn");
+const formContainer = document.getElementById("form-container");
+const newBookForm = document.getElementById("new-book-form");
 const myLibrary = [];
 
 function Book(title, author, pages, imagePath) {
@@ -80,4 +83,9 @@ myLibrary.forEach((book) => {
   card.appendChild(author);
 
   container.appendChild(card);
+});
+
+newBookBtn.addEventListener("click", () => {
+  formContainer.style.display =
+    formContainer.style.display === "none" ? "block" : "none";
 });
