@@ -7,6 +7,7 @@ const newBookBtn = document.getElementById("new-book-btn");
 const myLibrary = [];
 
 newBookBtn.addEventListener("click", showModal);
+
 // Handle form submission
 newBookForm.addEventListener("submit", (e) => {
   e.preventDefault(); //prevent default form submission

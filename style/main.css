@@ -125,6 +125,35 @@ form button:hover {
   color: #28a745; /* Green for "Read" */
 }
 
+/* Button Styling */
+.toggle-read {
+  padding: 10px 20px; /* Space inside the button */
+  font-size: 16px; /* Text size */
+  font-weight: bold; /* Make the text bold */
+  border: none; /* Remove the default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to a pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  background-color: #4caf50; /* Green background color */
+  color: white; /* White text color */
+}
+
+/* Hover effect for the button */
+.toggle-read:hover {
+  background-color: #45a049; /* Slightly darker green */
+  transform: scale(1.05); /* Slightly increase size */
+}
+
+.toggle-read:focus {
+  outline: none; /* Remove outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow effect on focus */
+}
+
+.toggle-read:disabled {
+  background-color: #ccc; /* Grey color when disabled */
+  cursor: not-allowed; /* Change cursor */
+}
+
 /* Animation keyframes */
 @keyframes fadeIn {
   from {
