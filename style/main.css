@@ -154,6 +154,23 @@ form button:hover {
   cursor: not-allowed; /* Change cursor */
 }
 
+.delete-book {
+  padding: 10px 20px; /* Space inside the button */
+  font-size: 16px; /* Text size */
+  font-weight: bold; /* Make the text bold */
+  border: none; /* Remove the default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to a pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  background-color: #df3f23; /* Green background color */
+  color: white; /* White text color */
+}
+
+.delete-book:hover {
+  background-color: #9e1c1c; /* Slightly darker green */
+  transform: scale(1.05); /* Slightly increase size */
+}
+
 /* Animation keyframes */
 @keyframes fadeIn {
   from {
