@@ -1,12 +1,15 @@
-const modal = document.getElementById("modal");
-const closeModalBtn = document.getElementById("close-modal");
+export class Modal {
+  constructor() {
+    this.modal = document.getElementById("modal");
+    this.closeModalBtn = document.getElementById("close-modal");
+    this.closeModalBtn.addEventListener("click", () => this.closeModal());
+  }
 
-export function showModal() {
-  modal.style.display = "flex";
+  showModal() {
+    this.modal.style.display = "flex";
+  }
+
+  closeModal() {
+    this.modal.style.display = "none";
+  }
 }
-
-export function closeModal() {
-  modal.style.display = "none";
-}
-
-closeModalBtn.addEventListener("click", closeModal);

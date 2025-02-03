@@ -1,65 +1,72 @@
-import { showModal, closeModal } from "./modal.js";
-import { renderBooks, clearBooks } from "./ui.js";
+import { Modal } from "./modal.js";
+import { UI } from "./ui.js";
 import { Book } from "./book.js";
 
-const newBookForm = document.getElementById("new-book-form");
-const newBookBtn = document.getElementById("new-book-btn");
-const myLibrary = [];
+export class App {
+  constructor() {
+    this.myLibrary = [];
+    this.modal = new Modal();
+    this.ui = new UI();
 
-newBookBtn.addEventListener("click", showModal);
+    this.newBookForm = document.getElementById("new-book-form");
+    this.newBookBtn = document.getElementById("new-book-btn");
 
-// Handle form submission
-newBookForm.addEventListener("submit", (e) => {
-  e.preventDefault(); //prevent default form submission
+    this.newBookBtn.addEventListener("click", () => this.modal.showModal());
 
-  const title = document.getElementById("title").value;
-  const image = document.getElementById("image").value;
-  const author = document.getElementById("author").value;
-  const pages = document.getElementById("pages").value;
+    this.newBookForm.addEventListener("submit", (e) =>
+      this.handleFormSubmit(e)
+    );
 
-  //Add the new book to the books array
-  myLibrary.push(new Book(title, author, pages, image));
+    this.initializeLibrary();
+  }
 
-  //Reset the form
-  newBookForm.reset();
-  clearBooks();
-  renderBooks(myLibrary);
-  closeModal();
-});
+  handleFormSubmit(e) {
+    e.preventDefault();
+    const title = document.getElementById("title").value;
+    const image = document.getElementById("image").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
 
-const book1 = new Book(
-  "The Hobbit",
-  "J.R.R. Tolkien",
-  "322",
-  "https://m.media-amazon.com/images/I/418jD+Rsd5L._SY445_SX342_.jpg"
-);
-const book2 = new Book(
-  "The Fellowship of the Ring",
-  "J.R.R. Tolkien",
-  "544",
-  "https://m.media-amazon.com/images/I/51HNV1J3UyL._SY445_SX342_.jpg"
-);
-const book3 = new Book(
-  "The Two Towers",
-  "J.R.R. Tolkien",
-  "448",
-  "https://m.media-amazon.com/images/I/41sMe18lj+L._SY445_SX342_.jpg"
-);
-book3.wasRead = true;
-const book4 = new Book(
-  "The Return of the King",
-  "J.R.R. Tolkien",
-  "432",
-  "https://m.media-amazon.com/images/I/51VYSm49SUL._SY445_SX342_.jpg"
-);
+    this.myLibrary.push(new Book(title, author, pages, image));
 
-function addBookToLibrary(book) {
-  myLibrary.push(book);
+    this.newBookForm.reset();
+    this.ui.renderBooks(this.myLibrary);
+    this.modal.closeModal();
+  }
+
+  initializeLibrary() {
+    const book1 = new Book(
+      "The Hobbit",
+      "J.R.R. Tolkien",
+      "322",
+      "https://m.media-amazon.com/images/I/418jD+Rsd5L._SY445_SX342_.jpg"
+    );
+
+    const book2 = new Book(
+      "The Fellowship of the Ring",
+      "J.R.R. Tolkien",
+      "544",
+      "https://m.media-amazon.com/images/I/51HNV1J3UyL._SY445_SX342_.jpg"
+    );
+
+    const book3 = new Book(
+      "The Two Towers",
+      "J.R.R. Tolkien",
+      "448",
+      "https://m.media-amazon.com/images/I/41sMe18lj+L._SY445_SX342_.jpg"
+    );
+
+    book3.wasRead = true;
+    const book4 = new Book(
+      "The Return of the King",
+      "J.R.R. Tolkien",
+      "432",
+      "https://m.media-amazon.com/images/I/51VYSm49SUL._SY445_SX342_.jpg"
+    );
+
+    this.myLibrary.push(book1, book2, book3, book4);
+    this.ui.renderBooks(this.myLibrary);
+  }
 }
 
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-addBookToLibrary(book4);
-
-renderBooks(myLibrary);
+new App();

@@ -17,10 +17,10 @@ Lesson overview
 This section contains a general overview of topics that you will learn in this lesson.
 
 - [x] How to write an object constructor and instantiate the object.
-- [X]Describe what a prototype is and how it can be used.
-- [ ]Explain prototypal inheritance.
-- [ ]Understand the basic do’s and don’t’s of prototypal inheritance.
-- [ ] Explain what the this keyword is.
+- [x] Describe what a prototype is and how it can be used.
+- [x] Explain prototypal inheritance.
+- [x] Understand the basic do’s and don’t’s of prototypal inheritance.
+- [x] Explain what the this keyword is.
 
 ### The prototype
 
@@ -62,13 +62,13 @@ console.log(player.name); // 'steve'
 
     - Avoid adding or changing properties on global objects like Object.prototype, Array.prototype, etc., as it can lead to bugs and conflicts.
 
-    - Don’t overuse inheritance:
+  - Don’t overuse inheritance:
 
-      - Keep inheritance hierarchies simple and shallow to prevent overly complex chains that are hard to debug and maintain.
+  - Keep inheritance hierarchies simple and shallow to prevent overly complex chains that are hard to debug and maintain.
 
-    Don’t use **_proto_** directly:
+  Don’t use **_proto_** directly:
 
-    - While it provides access to an object’s prototype, it's deprecated in favor of Object.getPrototypeOf() and Object.setPrototypeOf().
+  - While it provides access to an object’s prototype, it's deprecated in favor of Object.getPrototypeOf() and Object.setPrototypeOf().
 
 - How does this behave in different situations?
 
